@@ -1,6 +1,6 @@
 # Project Euler Solutions #
 
-This is a collection of my first adventures with both Project Euler (http://projecteuler.net) and Python.
+This is a collection of my first adventures with both [Project Euler](http://projecteuler.net) and Python.
 
 I wasn't planning on sharing these when I started writing them, and also didn't know Python, so the formatting and syntax varies pretty widely. 
 
@@ -11,9 +11,9 @@ Again, these are really rough; most don't even have comments, and the earlier on
 ## Usage ##
 To execute and open an interpreter: 
 
-   python -i p22.py
+`python -i p22.py`
 
-You should then be able to run the script again by calling [filename]().  Emphasis on _should_.
+You should then be able to run the script again by calling filename().  Emphasis on _should_.
 
 
 
