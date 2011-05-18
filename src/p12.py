@@ -1,5 +1,6 @@
+##SEE http://blog.ry-land.com/?p=91 for details on this one.
 import sys
-def prob12b():
+def p12():
     def factor(n):  
         if n == 1: return [1]  
         i = 2  
@@ -45,4 +46,4 @@ def prob12b():
 
     triangle(34000000) #arbitrarily large
 
-prob12b()
+p12()
