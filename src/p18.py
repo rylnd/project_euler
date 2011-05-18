@@ -1,7 +1,4 @@
-def prob18():
-    WARNING = '\033[93m'
-    FAIL = '\033[91m'
-    ENDC = '\033[0m'
+def prob18f():
 
     trian_in = '''75
 95 64
@@ -19,50 +16,22 @@ def prob18():
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23'''.split('\n')
 
-    matr = [trian_in[k].split() for k in range(15)]
+    matr = [[int(x) for x in trian_in[k].split()] for k in range(15)]
+
+
+    def smrt():
+        for j in range(13, -1, -1):
+            for ind, el in enumerate(matr[j]):
+                matr[j][ind] += max(matr[j+1][ind], matr[j+1][ind+1])
+
     def printt():
         for k in range(15):
             for j in matr[k]:
-                print j,
+                print "%02d" %j,
             print '\n',
-
-    def color(n):
-        for k in range(15):
-            for j in matr[k]:
-                if int(j) <= n:
-                   matr[k][matr[k].index(j)] = FAIL + j + ENDC
-                
-
-
-    def best(n):
-        total = 75
-        indx = 0
-        for i in range(1, 15):
-            if int(matr[i][indx]) <=n:
-                total = total + int(matr[i][indx+1])
-                indx +=1
-            elif int(matr[i][indx+1])<=n:
-                total = total + int(matr[i][indx])
-            else:
-                indx = matr[i].index(max(matr[i][indx], matr[i][indx+1]))
-                total = total + int(matr[i][indx])
-        return total
-    
-    for j in range(100):
-        print "<=%d: %d" %(j, best(j))
-
-    def smrt():
-        for j in range(13, 0, -1):
-            for k in matr[j]:
-                indx = matr[j].index(k)
-                matr[j][indx] = int(matr[j][indx]) + max(int(matr[j][indx]), int(matr[j][indx+1]))
-
-
 
     smrt()
 
     printt()
-    color(15)
-    printt()
 
-prob18()
+prob18f()

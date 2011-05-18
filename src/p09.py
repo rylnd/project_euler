@@ -1,7 +1,7 @@
-'''yeah, this is brute force.  I'll try and think of something better 
-later.  probably not though.'''
+#yeah, this is brute force.  I'll try and think of something better 
+#later.  probably not though.
 import os
-def prob9():
+def p9():
     for a in range(1, 500):
         for b in range(1, 500):
             for c in range(1, 500):
@@ -14,4 +14,4 @@ def prob9():
 
 
 
-prob9()
+p9()

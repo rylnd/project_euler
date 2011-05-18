@@ -1,4 +1,4 @@
-def prob10():
+def p10():
     sam = 2
     sm = 0
     for i in range(1, 1000):
@@ -10,4 +10,4 @@ def prob10():
     
     print sm
 
-prob10()
+p10()
