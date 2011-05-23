@@ -1,12 +1,12 @@
-def prob20():
+def p20():
     tot = 0
-    sum = 1
-    for i in range(2, 100):
-        sum = sum * i
-    sum = str(sum)
-    for j in range(0, len(sum)):
-        tot += int(sum[j])
+    #get 100!
+    _sum = str(reduce(lambda x,y: x*y, range(2,100)))
+    #convert to string to allow indexing
+    _sum = str(_sum)
 
+    # sum over digits
+    tot = sum(int(x) for x in _sum)
     print tot
 
-prob20()
+p20()

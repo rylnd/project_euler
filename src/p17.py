@@ -1,4 +1,4 @@
-def prob17():
+def p17():
     ones = {
         "1": "one",
         "2": "two",
@@ -73,7 +73,7 @@ def prob17():
         return digs.get(_n, "")
 
 
-    while (1==1):
+    while (1):
         _n = raw_input("enter a number:")
         
         choo = {
@@ -98,4 +98,4 @@ def prob17():
         f = choo[len(_n)]
         print f(_n)
 
-prob17()
+p17()

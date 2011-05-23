@@ -1,5 +1,5 @@
 import string
-def prob11():
+def p11():
 
     def up(a,b):
         if a <3:
@@ -91,4 +91,4 @@ def prob11():
                 max_=tmp
     print 'max: %d' % (max_)
 
-prob11()
+p11()

@@ -1,4 +1,4 @@
-def prob18f():
+def p18():
 
     trian_in = '''75
 95 64
@@ -18,20 +18,15 @@ def prob18f():
 
     matr = [[int(x) for x in trian_in[k].split()] for k in range(15)]
 
+#add up the matrix to get final at top
+    for j in range(13, -1, -1):
+        for ind, el in enumerate(matr[j]):
+            matr[j][ind] += max(matr[j+1][ind], matr[j+1][ind+1])
+#print matrix
+    for k in range(15):
+        for j in matr[k]:
+            print "%02d" %j,
+        print '\n',
 
-    def smrt():
-        for j in range(13, -1, -1):
-            for ind, el in enumerate(matr[j]):
-                matr[j][ind] += max(matr[j+1][ind], matr[j+1][ind+1])
 
-    def printt():
-        for k in range(15):
-            for j in matr[k]:
-                print "%02d" %j,
-            print '\n',
-
-    smrt()
-
-    printt()
-
-prob18f()
+p18()

@@ -1,4 +1,4 @@
-def prob13():
+def p13():
 
     input = '''37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
@@ -103,7 +103,7 @@ def prob13():
     
     count = 0
     for x in input:
-        count = count + int(x)
+        count += int(x)
     print count
     
-prob13()
+p13()
