@@ -1,10 +1,13 @@
-def prob25():
-    memo = {0:0, 1:1}
-    def fib(n):
-        if not n in memo:
-            memo[n] = fib(n-1) + fib(n-2)
-            return memo[n]
+def fib():
+    a,b,i = 1,1,1
+    while 1:
+        yield a,i
+        a,b,i = b,a+b, i+1
 
-    print fib(1)
+def p25():
+    for f, i in fib():
+        if len(str(f))==1000:
+            break
+    print i
 
-prob25()
+p25()
