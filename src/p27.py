@@ -1,42 +1,20 @@
-def calc(n,a,b):
-    return n**2 + a*n + b
+def p27():
+    prod, best = 41, 40
+    def isprime(x):
+        if x<2: return 0
+        if x%2:
+            for i in range(3,int(x**0.5),2):
+                if not x%i: return 0
+        else: return 0
+        return 1
 
-def primes(n):
-    if n==2: return [2]
-    elif n<2: return []
-    s = range(3, n+1, 2)
-    mroot = n ** 0.5
-    half = (n+1)/2-1
-    i = 0
-    m = 3
-    while m <= mroot:
-        if s[i]:
-            j = (m*m-3)/2
-            s[j] = 0
-            while j<half:
-                s[j]=0
-                j+=m
-        i=i+1
-        m=2*i+3
-    return [2] + [x for x in s if x]
+    for a in range(-999, 1000):
+        for b in range(1000):
+            c=0
+            while isprime(c**2 + a*c + b)==1:
+                c+=1
+            if c>best:
+                best, prod = c, a*b
+    print prod
 
-
-
-
-prime = primes(1000000)
-alle = {}
-max_=0
-for i in range(-999, 1000, 2):
-    for j in range(-999, 1000, 2):
-        n = 0
-        while(calc(n,i,j) in prime):
-            n +=1
-        alle[i*j] = n
-        if n > max_:
-            max_=n
-            print "i*j:%d, n: %d"%(i*j,n)
-            
-    
-print max(alle, key=alle.get)
-
-
+p27()
